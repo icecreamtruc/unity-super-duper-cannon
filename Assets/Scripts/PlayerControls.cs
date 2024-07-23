@@ -46,6 +46,9 @@ public class PlayerControls : MonoBehaviour
 
     void FixedUpdate()
     {
+        Vector3 currentRotation = rb.rotation.eulerAngles;
+        rb.rotation = Quaternion.Euler(0f, currentRotation.y, 0f);
+        
         float inputHorizontal = Input.GetAxis("Horizontal");
         float inputVertical = Input.GetAxis("Vertical");
         
